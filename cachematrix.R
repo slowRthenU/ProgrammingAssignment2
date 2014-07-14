@@ -7,20 +7,33 @@
 ## that can cache its inverse.
 
 makeCacheMatrix <- function(m = matrix()) {
+  # set inv and mChange to initial values
   inv <- NULL
   mChange <- TRUE
+  
+  # define a function which can be used to set special matrix quantities
   set <- function(y) {
     m <<- y
     inv <<- NULL
     mChange <<- TRUE
   }
+  
+  # define get a function to return the special matrix
   get <- function(){ m}
+  
+  # define a set inverse function that sets the inverse and mChange
   setinv <- function(inverse){
     inv <<- inverse
     mChange <<- FALSE
   }
+  
+  # define a get inverse to return the inverse
   getinv <- function(){inv}
+  
+  # define a function to return mChange value
   isMChange <- function(){mChange}
+  
+  # return functions as a list
   list(set = set, get = get
        , setinv = setinv
        , getinv = getinv
