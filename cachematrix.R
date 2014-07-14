@@ -6,11 +6,11 @@
 ## makeCacheMatrix function creates a special "matrix" object
 ## that can cache its inverse.
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(m = matrix()) {
   inv <- NULL
   mChange <- TRUE
   set <- function(y) {
-    m <<- x
+    m <<- y
     inv <<- NULL
     mChange <<- TRUE
   }
@@ -33,7 +33,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## special "matrix" returned by makeCacheMatrix above.
 ## If the inverse has already been calculated (and the
 ## matrix has not changed), then it retrieves the inverse
-## from the cache.
+## from the cache. If the matrix has been changed it recalculates the inverse
 
 
 cacheSolve <- function(x, ...) {
