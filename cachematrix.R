@@ -22,9 +22,9 @@ makeCacheMatrix <- function(x = matrix()) {
   getinv <- function(){inv}
   isMChange <- function(){mChange}
   list(set = set, get = get
-       , setmean = setmean
-       , getmean = getmean
-       , isMChange)
+       , setinv = setinv
+       , getinv = getinv
+       , isMChange = isMChange)
   
 }
 
